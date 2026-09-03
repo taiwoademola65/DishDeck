@@ -17,8 +17,8 @@ export interface Recipe {
   mealType: string[];
 }
 
-export interface recipeApiResponse {
-  posts: Recipe[],
+export interface RecipeResponse {
+  Recipes: Recipe[],
   total: number,
   skip: number,
   limit: number
