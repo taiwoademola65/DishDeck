@@ -1,0 +1,52 @@
+<app-navbar />
+<main
+  class="min-h-95 px-8 md:px-16 py-12 flex items-center bg-linear-to-r from-slate-10 to-amber-50"
+>
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div class="max-w-xl">
+      <div class="mb-4">
+        <span class="text-sm font-medium text-slate-500">
+          <span
+            class="underline decoration-2 underline-offset-8 decoration-amber-500 font-semibold text-slate-800"
+            >The Best</span
+          >
+          Food Recipe Application
+        </span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-bold text-slate-900 tracking-tight leading-tight mb-4">
+        Cook Smarter, Eat Better with <span class="text-amber-500">DishDeck</span>.
+      </h1>
+
+      <p class="text-base text-slate-600 leading-relaxed mb-8">
+        Discover thousands of easy, chef-crafted recipes tailored to what is already in your fridge.
+        Save your favorites, plan your weekly meals, and turn everyday cooking into an effortless
+        habit.
+      </p>
+
+      <div class="flex items-center gap-4">
+        <button 
+          class="px-6 py-3 rounded-full bg-slate-900 text-white font-medium hover:bg-slate-800 transition"
+        >
+          <a routerLink="recipeList">Explore Recipes</a> 
+        </button>
+        <button
+          class="px-6 py-3 rounded-full border border-slate-300 text-slate-700 font-medium hover:bg-slate-50 transition"
+        >
+          Saved Recipes
+        </button>
+      </div>
+    </div>
+
+    <div class="relative flex justify-center items-center">
+      <div
+        class="absolute w-72 h-72 sm:w-96 sm:h-96 bg-amber-400/20 rounded-full blur-3xl -z-10"
+      ></div>
+
+      <img
+        src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_960/v1/img/recipes/22/78/2/xy39o2sOTtudkgyDgZtv_spaghettisauce.jpg"
+        class="w-full max-w-lg object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-300 border shadow shadow-lg rounded-xl"
+      />
+    </div>
+  </div>
+</main>
+<app-footer />

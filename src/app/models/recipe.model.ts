@@ -18,7 +18,7 @@ export interface Recipe {
 }
 
 export interface RecipeResponse {
-  Recipes: Recipe[],
+  recipes: Recipe[],
   total: number,
   skip: number,
   limit: number
