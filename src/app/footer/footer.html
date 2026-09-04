@@ -9,22 +9,40 @@
     <div>
       <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Explore</h4>
       <ul class="space-y-2 text-sm">
-        <li><a href="#" class="hover:text-white transition-colors">Quick Dinners</a></li>
-        <li><a href="#" class="hover:text-white transition-colors">Vegetarian</a></li>
-        <li><a href="#" class="hover:text-white transition-colors">Desserts</a></li>
+        <li><a routerLink="/" class="hover:text-white transition-colors">Quick Dinners</a></li>
+        <li><a routerLink="/" class="hover:text-white transition-colors">Fresh Recipes</a></li>
+        <li><a routerLink="/recipeList" class="hover:text-white transition-colors">Explore Recipes</a></li>
       </ul>
     </div>
     <div>
-      <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Newsletter</h4>
-      <p class="text-xs text-slate-400 mb-3">Get new chef-curated dishes every weekend.</p>
-      <div class="flex gap-2">
-        <input type="email" placeholder="Enter email" class="bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white w-full focus:outline-none focus:ring-1 focus:ring-amber-500" />
-        <button class="bg-amber-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-amber-600 transition-colors">Join</button>
-      </div>
-    </div>
+  <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Contact</h4>
+  <ul class="space-y-3 text-sm text-slate-400">
+    <!-- Email Link -->
+    <li>
+      <a 
+        href="mailto:taiwoademola065@gmail.com" 
+        class="flex items-center gap-2.5 hover:text-amber-400 transition-colors group"
+      >
+        <span class="text-base"><i class="fa-solid fa-envelope" style="color: #ffffff;"></i></span>
+        <span class="group-hover:underline">taiwoademola065@gmail.com</span>
+      </a>
+    </li>
+
+    <!-- Phone Link -->
+    <li>
+      <a 
+        href="tel:+2348100165722" 
+        class="flex items-center gap-2.5 hover:text-amber-400 transition-colors group"
+      >
+        <span class="text-base"><i class="fa-solid fa-phone" style="color: #ffffff;"></i></span>
+        <span class="group-hover:underline">+234 8100 1657 22</span>
+      </a>
+    </li>
+  </ul>
+</div>
   </div>
   <div class="max-w-7xl mx-auto px-6 border-t border-slate-800 mt-12 pt-6 text-xs text-slate-500 flex justify-between">
-    <p>&copy; 2026 SavorCraft Inc. All rights reserved.</p>
+    <p>&copy; {{currentYear}} DishDeck Built by Dev-Demola. All rights reserved.</p>
     <p>Powered by Open Culinary API</p>
   </div>
 </footer>

@@ -1,18 +1,33 @@
 <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
-  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-    <a routerLink="/" class="flex items-center gap-2">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 min-h-20 flex flex-wrap items-center justify-between">
+    <a routerLink="/" class="flex items-center gap-2" (click)="closeMenu()">
       <span class="p-2 bg-amber-500 text-white rounded-xl shadow-lg shadow-amber-500/30">🍳</span>
-      <span class="text-2xl font-bold tracking-tight text-slate-900"
+      <span class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900"
         >Dish<span class="text-amber-500">Deck</span></span
       >
     </a>
-    <nav class="flex items-center gap-6 text-sm font-medium text-slate-600">
-      <a routerLink="/recipeList" class="hover:text-amber-500 transition-colors">Recipes</a>
-      <a href="#categories" class="hover:text-amber-500 transition-colors">Categories</a>
+    <button
+      type="button"
+      class="md:hidden inline-flex items-center justify-center rounded-lg p-2 text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-amber-500"
+      aria-label="Toggle navigation menu"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="primary-navigation"
+      (click)="toggleMenu()"
+    >
+      <span class="text-xl" aria-hidden="true">{{ menuOpen() ? '✕' : '☰' }}</span>
+    </button>
+    <nav
+      id="primary-navigation"
+      class="hidden w-full md:w-auto md:flex items-center gap-6 text-sm font-medium text-slate-600"
+      [class.hidden]="!menuOpen()"
+    >
+      <a routerLink="/" class="block py-4 md:py-0 hover:text-amber-500 transition-colors text-base" (click)="closeMenu()">Fresh Recipes</a>
       <button
-        class="bg-slate-900 text-white px-5 py-2.5 rounded-full hover:bg-slate-800 transition-all shadow-sm"
+        routerLink="/recipeList"
+        class="mb-4 md:mb-0 bg-slate-900 text-white px-5 py-2.5 rounded-full hover:bg-slate-800 transition-all shadow-sm"
+        (click)="closeMenu()"
       >
-        Saved Recipes
+        Explore Recipes
       </button>
     </nav>
   </div>
