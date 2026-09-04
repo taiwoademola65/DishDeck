@@ -2,8 +2,8 @@ import { Component, inject } from '@angular/core';
 import { RecipeService } from '../services/recipe-service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Navbar } from "../navbar/navbar";
-import { RouterOutlet, RouterLink } from "../../../node_modules/@angular/router/types/_router_module-chunk";
 import { Footer } from '../footer/footer';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-list',

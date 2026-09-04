@@ -6,5 +6,5 @@ import { RecipeDetail } from './recipe-detail/recipe-detail';
 export const routes: Routes = [
   {path: '',  component: Home},
   {path: 'recipeList', component: RecipeList},
-  {path: 'recipeDetail', component: RecipeDetail}
+  {path: 'recipe/:id', component: RecipeDetail}
 ];
