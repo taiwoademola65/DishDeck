@@ -1,14 +1,23 @@
 <app-navbar />
+<div class="ms-16 mt-10">
 
+<a
+      routerLink="/"
+      class="text-sm bg-slate-900 px-4 py-2 rounded-lg text-white hover:bg-slate-800"
+      ><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i> Back Home</a
+    >
+</div>
 <div
-  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 lg:px-16 md:px-5 px-4 mt-14"
+  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 lg:px-16 md:px-5 px-4 mt-14 mb-14"
 >
+
   @for (recipes of recipeResponse()?.recipes; track recipes.id) {
+    
     <div
       class="p-8 max-w-lg border border-slate-300 rounded-2xl hover:shadow-xl hover:shadow-indigo-50 flex flex-col items-center">
       <img
         src="{{recipes.image}}"
-        class="shadow rounded-lg overflow-hidden border"
+        class="shadow rounded-lg border-slate-300 overflow-hidden border"
       />
       <div class="mt-8">
         <h4 class="font-bold text-xl text-slate-700">{{ recipes.name }}</h4>
