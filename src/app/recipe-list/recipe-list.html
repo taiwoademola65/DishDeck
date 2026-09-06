@@ -7,33 +7,42 @@
       ><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i> Back Home</a
     >
 </div>
-<div
-  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 lg:px-16 md:px-5 px-4 mt-14 mb-14"
->
 
-  @for (recipes of recipeResponse()?.recipes; track recipes.id) {
-    
-    <div
-      class="p-8 max-w-lg border border-slate-300 rounded-2xl hover:shadow-xl hover:shadow-indigo-50 flex flex-col items-center">
-      <img
-        src="{{recipes.image}}"
-        class="shadow rounded-lg border-slate-300 overflow-hidden border"
-      />
-      <div class="mt-8">
-        <h4 class="font-bold text-xl text-slate-700">{{ recipes.name }}</h4>
-        <p class="mt-2 text-gray-600">{{recipes.ingredients}}
-        </p>
-        <div class="mt-5">
-          <button
-            type="button"
-            class="inline-flex items-center rounded-md border border-transparent bg-amber-500 px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-gray-900"
-          >
-            <a [routerLink]="['/recipe', recipes.id]">Explore details</a>
-          </button>
+@if (!recipeResponse()) {
+  <div class="flex flex-col items-center justify-center py-10">
+    <div class="w-15 h-15 border-4 border-slate-200 border-t-amber-500 rounded-full animate-spin"></div>
+    <p class="mt-4 text-sm font-medium text-slate-500">Fetching delicious recipes...</p>
+  </div>
+}@else {
+
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 lg:px-16 md:px-5 px-4 mt-14 mb-14"
+  >
+    @for (recipes of recipeResponse()?.recipes; track recipes.id) {
+      
+      <div
+        class="p-8 max-w-lg border border-slate-300 rounded-2xl hover:shadow-xl hover:shadow-indigo-50 flex flex-col items-center">
+        <img
+          src="{{recipes.image}}"
+          class="shadow rounded-lg border-slate-300 overflow-hidden border"
+        />
+        <div class="mt-8">
+          <h4 class="font-bold text-xl text-slate-700">{{ recipes.name }}</h4>
+          <p class="mt-2 text-gray-600">{{recipes.ingredients}}
+          </p>
+          <div class="mt-5">
+            <button
+              type="button"
+              class="inline-flex items-center rounded-md border border-transparent bg-amber-500 px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-gray-900"
+            >
+              <a [routerLink]="['/recipe', recipes.id]">Explore details</a>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  }
-</div>
+    }
+  </div>
+}
+
 
 <app-footer />
