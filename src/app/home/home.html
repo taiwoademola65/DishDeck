@@ -1,6 +1,7 @@
+
 <app-navbar />
 <main
-  class="min-h-95 px-8 md:px-16 py-12 flex items-center bg-linear-to-r from-slate-10 to-amber-50"
+  class="min-h-95 px-8 md:px-16 py-12  flex items-center bg-linear-to-r from-slate-10 to-amber-50"
 >
   <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
     <div class="max-w-xl">
@@ -24,47 +25,96 @@
       </p>
 
       <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
-  <a 
-    routerLink="recipeList"
-    class="w-full sm:w-auto text-center px-6 py-3 rounded-full bg-slate-900 text-white font-medium hover:bg-slate-800 transition"
-  >
-    Explore Recipes
-  </a> 
-  
-  <button
-    class="w-full sm:w-auto px-6 py-3 rounded-full border border-slate-300 text-slate-700 font-medium hover:bg-slate-50 transition"
-  >
-    <a routerLink="recipeList">See All Recipes</a>
-  </button>
-</div>
+        <a
+          routerLink="recipeList"
+          class="w-full sm:w-auto text-center px-6 py-2.5 rounded-full bg-slate-900 text-white font-medium hover:bg-slate-800 transition"
+        >
+          Explore Recipes
+        </a>
+
+        <button
+          class=" w-ful sm:w-auto px-6 py-2.5 rounded-full border border-slate-300 text-slate-700 font-medium hover:bg-slate-50 transition"
+        >
+          <a routerLink="recipeList">See All Recipes</a>
+        </button>
+      </div>
     </div>
 
-<div class="relative flex justify-center items-center">
-  <div class="absolute w-72 h-72 sm:w-96 sm:h-96 bg-amber-400/20 rounded-full blur-3xl -z-10"></div>
+    <div class="relative flex justify-center items-center">
+      <div
+        class="absolute w-72 h-72 sm:w-96 sm:h-96 bg-amber-400/20 rounded-full blur-3xl -z-10"
+      ></div>
 
-  <img
-    src="heroimages.png"
-    width="480"
-    height="480"
-    fetchpriority="high"
-    class="w-full max-w-sm sm:max-w-md aspect-square rounded-full object-cover border-4 border-white ring-1 ring-orange-300 shadow-xl"
-  />
-</div>
+      <img
+        src="heroimages.png"
+        width="480"
+        height="480"
+        fetchpriority="high"
+        class="w-full max-w-sm sm:max-w-md aspect-square rounded-full object-cover border-4 border-white ring-1 ring-orange-300 shadow-xl"
+      />
+    </div>
   </div>
 </main>
 
+
 <section class="bg-gradient-to-r from-amber-50 to-amber-50">
-<div class="max-w-4xl mx-auto text-center py-16 px-6">
-  <span class="text-amber-600 font-bold text-lg uppercase tracking-widest px-3 py-1 ">
-    Why DishDeck?
-  </span>
-  <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-4 tracking-tight">
-    Smart cooking, zero guesswork.
-  </h2>
-  <p class="text-slate-500 mt-4 text-base md:text-lg leading-relaxed max-w-2xl mx-auto ">
-    Discover curated, chef-tested recipes with step-by-step guides, precise prep times, and interactive checklists designed to make home cooking effortless.
-  </p>
-</div>
+  <div class="max-w-4xl mx-auto text-center py-16 px-6">
+    <span class="text-amber-600 font-bold text-lg uppercase tracking-widest px-3 py-1">
+      Why DishDeck?
+    </span>
+    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-4 tracking-tight">
+      Smart cooking, zero guesswork.
+    </h2>
+    <p class="text-slate-600 mt-6 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+      Discover curated, chef-tested recipes with step-by-step guides, precise prep times, and
+      interactive checklists designed to make home cooking effortless.
+    </p>
+    <a
+          routerLink="recipeList"
+          class="w-full sm:w-auto text-center px-6 py-3 rounded-full bg-slate-900 text-white font-medium hover:bg-slate-800 transition"
+        >
+          Explore Recipes
+        </a>  
+  </div>
 </section>
+
+
+<div id="fresh" class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-8 my-14">
+  @for (recipes of recipeResponse()?.recipes; track recipes.id) {
+    @if ($index < 4) {
+      <div
+      class="p-8 max-w-lg border border-slate-300 rounded-2xl hover:shadow-xl hover:shadow-indigo-50 flex flex-col items-center">
+      <img
+        src="{{recipes.image}}"
+        class="shadow rounded-lg border-slate-300 overflow-hidden border"
+      />
+      <div class="mt-8">
+        <h4 class="font-bold text-xl text-slate-700">{{ recipes.name }}</h4>
+        <p class="mt-2 text-gray-600">{{recipes.ingredients}}
+        </p>
+        <div class="mt-5">
+          <button
+            type="button"
+            class="inline-flex items-center rounded-md border border-transparent bg-amber-500 px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-gray-900"
+          >
+            <a [routerLink]="['/recipe', recipes.id]">Explore details</a>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    }
+    
+  }
+  
+  
+</div>
+<div class="flex justify-center mb-10 px-4">
+<a
+          routerLink="recipeList"
+class="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800 transition-colors shadow-sm"        >
+          Explore Recipes
+        </a>  
+</div>
 
 <app-footer />
