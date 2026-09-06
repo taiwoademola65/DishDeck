@@ -1,7 +1,6 @@
-
 <app-navbar />
 <main
-  class="min-h-95 px-8 md:px-16 py-12  flex items-center bg-linear-to-r from-slate-10 to-amber-50"
+  class="min-h-95 px-8 md:px-16 py-12 flex items-center bg-linear-to-r from-slate-10 to-amber-50"
 >
   <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
     <div class="max-w-xl">
@@ -33,7 +32,7 @@
         </a>
 
         <button
-          class=" w-ful sm:w-auto px-6 py-2.5 rounded-full border border-slate-300 text-slate-700 font-medium hover:bg-slate-50 transition"
+          class="w-ful sm:w-auto px-6 py-2.5 rounded-full border border-slate-300 text-slate-700 font-medium hover:bg-slate-50 transition"
         >
           <a routerLink="recipeList">See All Recipes</a>
         </button>
@@ -56,7 +55,6 @@
   </div>
 </main>
 
-
 <section class="bg-gradient-to-r from-amber-50 to-amber-50">
   <div class="max-w-4xl mx-auto text-center py-16 px-6">
     <span class="text-amber-600 font-bold text-lg uppercase tracking-widest px-3 py-1">
@@ -70,51 +68,53 @@
       interactive checklists designed to make home cooking effortless.
     </p>
     <a
-          routerLink="recipeList"
-          class="w-full sm:w-auto text-center px-6 py-3 rounded-full bg-slate-900 text-white font-medium hover:bg-slate-800 transition"
-        >
-          Explore Recipes
-        </a>  
+      routerLink="recipeList"
+      class="w-full sm:w-auto text-center px-6 py-3 rounded-full bg-slate-900 text-white font-medium hover:bg-slate-800 transition"
+    >
+      Explore Recipes
+    </a>
   </div>
 </section>
 
-
-<div id="fresh" class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-8 my-14">
+<div
+  id="fresh"
+  class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-8 my-14"
+>
+<h2 class="text-3xl font-extrabold text-slate-900 mt-3 tracking-tight">Featured Recipes</h2>
+  <p class="text-slate-600 text-sm sm:text-base mt-2">Top-rated meals curated for you.</p>
+  
   @for (recipes of recipeResponse()?.recipes; track recipes.id) {
     @if ($index < 4) {
       <div
-      class="p-8 max-w-lg border border-slate-300 rounded-2xl hover:shadow-xl hover:shadow-indigo-50 flex flex-col items-center">
-      <img
-        src="{{recipes.image}}"
-        class="shadow rounded-lg border-slate-300 overflow-hidden border"
-      />
-      <div class="mt-8">
-        <h4 class="font-bold text-xl text-slate-700">{{ recipes.name }}</h4>
-        <p class="mt-2 text-gray-600">{{recipes.ingredients}}
-        </p>
-        <div class="mt-5">
-          <button
-            type="button"
-            class="inline-flex items-center rounded-md border border-transparent bg-amber-500 px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-gray-900"
-          >
-            <a [routerLink]="['/recipe', recipes.id]">Explore details</a>
-          </button>
+        class="p-8 max-w-lg border border-slate-300 rounded-2xl hover:shadow-xl hover:shadow-indigo-50 flex flex-col items-center"
+      >
+        <img
+          src="{{ recipes.image }}"
+          class="shadow rounded-lg border-slate-300 overflow-hidden border"
+        />
+        <div class="mt-8">
+          <h4 class="font-bold text-xl text-slate-700">{{ recipes.name }}</h4>
+          <p class="mt-2 text-gray-600">{{ recipes.ingredients }}</p>
+          <div class="mt-5">
+            <button
+              type="button"
+              class="inline-flex items-center rounded-md border border-transparent bg-amber-500 px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-gray-900"
+            >
+              <a [routerLink]="['/recipe', recipes.id]">Explore details</a>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-    
     }
-    
   }
-  
-  
 </div>
 <div class="flex justify-center mb-10 px-4">
-<a
-          routerLink="recipeList"
-class="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800 transition-colors shadow-sm"        >
-          Explore Recipes
-        </a>  
+  <a
+    routerLink="recipeList"
+    class="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800 transition-colors shadow-sm"
+  >
+    Explore All Recipes
+  </a>
 </div>
 
 <app-footer />
