@@ -28,13 +28,13 @@
           routerLink="recipeList"
           class="w-full sm:w-auto text-center px-6 py-2.5 rounded-full bg-slate-900 text-white font-medium hover:bg-slate-800 transition"
         >
-          Explore Recipes
+          See All Recipes
         </a>
 
         <button
           class="w-ful sm:w-auto px-6 py-2.5 rounded-full border border-slate-300 text-slate-700 font-medium hover:bg-slate-50 transition"
         >
-          <a routerLink="recipeList">See All Recipes</a>
+          <a href="#fresh">Explore few Recipes</a>
         </button>
       </div>
     </div>
@@ -84,8 +84,7 @@
     <p class="mt-4 text-sm font-medium text-slate-500">Fetching delicious recipes...</p>
   </div>
 } @else {
-  <div
-    id="fresh"
+  <div id="fresh"
     class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-8 my-14"
   >
     <h2 class="text-3xl font-extrabold text-slate-900 mt-3 tracking-tight">Featured Recipes</h2>
